@@ -45,7 +45,7 @@ get '/:id' do
   id = params.fetch('id')
   @bowl = Bowl.find(id) || Bowl.new(id: id)
 
-  unless @bowl.id
+  unless @bowl.persisted?
     @bowl.save
   end
 
