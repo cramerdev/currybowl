@@ -1,0 +1,5 @@
+<h1>Bowl <%= @bowl.id %></h1>
+
+<% @bowl.servings.each do |serving| %>
+  <%= serving.request %>
+<% end %>
