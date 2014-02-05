@@ -34,6 +34,13 @@ get '/' do
   erb :index
 end
 
+get '/new' do
+  bowl = Bowl.new
+  bowl.save
+
+  redirect "/#{bowl.id}"
+end
+
 get '/:id' do
   id = params.fetch('id')
   @bowl = Bowl.find(id) || Bowl.new(id: id)
