@@ -1,5 +1,10 @@
 <h1>Bowl <%= @bowl.id %></h1>
 
+<p>Send a POST request to <pre>http://currybowl.herokuapp.com/<%= @bowl.id
+%></pre> to log the serving.</p>
+
+<h2>Servings</h2>
 <% @bowl.servings.each do |serving| %>
-  <%= serving.request %>
+  <%= serving.created_at %><br />
+  <pre><%= serving.request %></pre>
 <% end %>
